@@ -28,11 +28,11 @@ class App(Tk):
 class StartPage(Frame):
 	def __init__(self, parent, controller):
 		Frame.__init__(self, parent)
-		img = PhotoImage(file = 'recetas.png')
+		self.img = PhotoImage(file = 'recetas.png')
 		
-		label=Label(self, image=img.subsample(3,3))
+		label=Label(self, image=self.img.subsample(3,3))
 		label.pack(padx=10, pady=10)
-		page_one = Button(self,image = img,command=lambda:controller.show_frame(PageOne))
+		page_one = Button(self,image = self.img,command=lambda:controller.show_frame(PageOne))
 		#page_one = Button(self, text="Page One",command=lambda:controller.show_frame(PageOne))
 		page_one.pack(pady=20)
 		page_two = Button(self, text="Page Two", command=lambda:controller.show_frame(PageTwo))
